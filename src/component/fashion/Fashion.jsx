@@ -5,10 +5,10 @@ function Fashion() {
     <div className="relative w-full h-full">
       {/* Hero Section with Background */}
       <div
-        className="h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-white text-center px-4"
+        className="h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-white text-center px-4 md:h-[450px]"
         style={{
           backgroundImage:
-            "url('https://hips.hearstapps.com/hmg-prod/images/banner-1-6835c52f68f54.png?crop=0.330xw:0.660xh;0.337xw,0.0160xh&resize=360:*')",
+            "url('https://omaxwatches.in/cdn/shop/collections/womens_leather_bag.webp?v=1744699796')",
         }}
       >
         <h1 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4">

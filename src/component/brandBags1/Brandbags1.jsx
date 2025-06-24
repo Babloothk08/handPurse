@@ -19,7 +19,7 @@ function Brandbags1() {
       title: 'Diyana Handbag',
       price: '2.00$',
       image:
-        'https://thumbs.dreamstime.com/b/pink-purse-black-strap-sitting-background-main-focus-image-372132034.jpg',
+        'https://media.istockphoto.com/id/654113018/photo/orange-handbag-on-emerald-green-background.jpg?s=612x612&w=0&k=20&c=RVpc7QXNgBIm_gYjYc53XdtHM07F8WEXIKxmjVNPDL4=',
     },
     {
       title: 'Flap Over',
@@ -30,7 +30,7 @@ function Brandbags1() {
   ];
 
   return (
-    <div className="relative w-full py-16 bg-white">
+    <div  className="relative w-full py-16 bg-white" >
       <div className="max-w-[1300px] mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((item, index) => (
           <div

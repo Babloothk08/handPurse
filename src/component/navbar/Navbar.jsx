@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { PiShoppingBagBold } from "react-icons/pi";
 import { MdMenu, MdClose } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [item , setItem] = useState(false)
+
+  let visible = () =>{
+    setIsOpen(!isOpen)
+  }
+  let handClicks = () => {
+    setItem (!item)
+  }
 
   return (
     <div className="w-full fixed top-0 z-10 bg-white shadow-md">
@@ -20,12 +29,65 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg font-medium">
-          <li className="hover:text-amber-500 cursor-pointer">Home</li>
-          <li className="hover:text-amber-500 cursor-pointer">About</li>
-          <li className="hover:text-amber-500 cursor-pointer">Shop</li>
-          <li className="hover:text-amber-500 cursor-pointer">Pages</li>
-          <li className="hover:text-amber-500 cursor-pointer">Blog</li>
-          <li className="hover:text-amber-500 cursor-pointer">Contact</li>
+          <li className="hover:text-amber-500 cursor-pointer">
+            <Link to = '/'>Home</Link>
+          </li>
+          <li className="hover:text-amber-500 cursor-pointer">
+            <Link to = '/about'>About</Link>
+          </li>
+          <li className="hover:text-amber-500 cursor-pointer">
+            <Link to = '/shop'>Shop</Link>
+          </li>
+          <li className="hover:text-amber-500 cursor-pointer relative "onClick={visible}>
+            <Link to = '/pages'>Pages</Link>
+            {
+              isOpen && (
+                <div className='absolute text-center bg-amber-50 p-5 w-56  -left-20'>
+                   <Link to = '/about'>
+                      <p className='hover:bg-red-500 hover:text-white '>About</p>
+                   </Link>
+
+                   <Link to = '/services'>
+                      <p className='hover:bg-red-500 hover:text-white'>Our Service</p>
+                   </Link>
+
+                   <Link to = '/pricing'>
+                      <p className='hover:bg-red-500 hover:text-white'>Pricing Plan</p>
+                   </Link>   
+                   <Link to = '/ourteam'>
+                      <p className='hover:bg-red-500 hover:text-white'>Our Team</p>
+                   </Link>
+
+                   <Link to = '/faq'>
+                     <p className='hover:bg-red-500 hover:text-white'>Faq</p>
+                   </Link>
+
+                   <Link to = '/contact'>
+                      <p className='hover:bg-red-500 hover:text-white'>Contact</p>
+                   </Link>
+                </div>
+              )
+            }
+
+          </li>
+          <li className="hover:text-amber-500 cursor-pointer relative" onClick={handClicks}>
+            <Link to = '/blog'>Blog</Link>
+            {
+              item &&(
+                <div className='absolute bg-amber-50  p-5 w-36  -left-10'>
+                  <Link to = '/blogchl'>
+                      <p className='hover:bg-red-500 hover:text-white'>Blog Grid</p>
+                  </Link>
+                  <Link to = '/bloglist'>
+                      <p className='hover:bg-red-500 hover:text-white'>Blog List</p>
+                  </Link>
+            </  div>
+              )
+            }
+          </li>
+          <li className="hover:text-amber-500 cursor-pointer">
+            <Link to = '/contact'>Contact</Link>
+          </li>
         </ul>
 
         {/* Desktop Right Buttons */}
@@ -46,12 +108,24 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white w-full px-4 pb-4 shadow-md">
           <ul className="flex flex-col gap-4 text-lg font-medium">
-            <li className="hover:text-amber-500 cursor-pointer">Home</li>
-            <li className="hover:text-amber-500 cursor-pointer">About</li>
-            <li className="hover:text-amber-500 cursor-pointer">Shop</li>
-            <li className="hover:text-amber-500 cursor-pointer">Pages</li>
-            <li className="hover:text-amber-500 cursor-pointer">Blog</li>
-            <li className="hover:text-amber-500 cursor-pointer">Contact</li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to = '/'>Home</Link>
+            </li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to = '/about'>About</Link>
+            </li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to = '/shop'>Shop</Link>
+            </li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to = '/pages'>Pages</Link>
+            </li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to='/blog'>Blog</Link>
+            </li>
+            <li className="hover:text-amber-500 cursor-pointer">
+              <Link to = '/contact'>Contact</Link>
+            </li>
             <button className="bg-amber-400 px-4 py-2 rounded-lg text-white font-semibold hover:bg-amber-500">
               Get a Quote
             </button>
