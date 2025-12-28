@@ -5,10 +5,11 @@ function Bag1() {
     AOS.init();
   </script>
   return (
-    <div className="relative w-full py-10"data-aos="fade-up">
+    <div className="relative w-full py-10"data-aos="flip-right">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 px-4 max-w-[1200px] mx-auto">
         {/* Card 1 */}
-        <div className="flex flex-col md:flex-row bg-[#fce4d1] rounded-xl overflow-hidden w-full max-w-md" data-aos="fade-up">
+        <div data-aos="fade-up"></div>
+        <div className="flex flex-col md:flex-row bg-[#fce4d1] rounded-xl overflow-hidden w-full max-w-md hover:bg-green-400" data-aos="fade-up ">
           {/* Text Content */}
           <div className="p-6 flex flex-col justify-center gap-2 text-center md:text-left">
             <h2 className="text-lg font-semibold text-orange-600">SALE UP TO 40%</h2>
@@ -27,9 +28,9 @@ function Bag1() {
         </div>
 
         {/* Card 2 (Same as above) */}
-        <div className="flex flex-col md:flex-row bg-[#fce4d1] rounded-xl overflow-hidden w-full max-w-md">
+        <div className="flex flex-col md:flex-row bg-[#fce4d1] rounded-xl overflow-hidden w-full max-w-md hover:bg-green-400">
           {/* Text Content */}
-          <div className="p-6 flex flex-col justify-center gap-2 text-center md:text-left">
+          <div className="p-6 flex flex-col justify-center gap-2 text-center md:text-left ">
             <h2 className="text-lg font-semibold text-orange-600">SALE UP TO 40%</h2>
             <h1 className="text-4xl font-sans">Luxury</h1>
             <h1 className="text-4xl font-sans">HandBag</h1>

@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [item , setItem] = useState(false)
+  const [menu , setMenu] = useState("shop")
 
-  let visible = () =>{
-    setIsOpen(!isOpen)
-  }
-  let handClicks = () => {
-    setItem (!item)
-  }
+  // let visible = () =>{
+  //   setIsOpen(!isOpen)
+  // }
+  // let handClicks = () => {
+  //   setItem (!item)
+  // }
 
   return (
     <div className="w-full fixed top-0 z-10 bg-white shadow-md">
@@ -29,17 +30,28 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg font-medium">
-          <li className="hover:text-amber-500 cursor-pointer">
-            <Link to = '/'>Home</Link>
+          <li onClick={() => setMenu("home")} className="hover:text-amber-500 cursor-pointer border-none">
+          <Link to="/"
+              className={menu === "home" ? " underline underline-offset-8" : ""}
+            >
+            Home
+          </Link>
           </li>
-          <li className="hover:text-amber-500 cursor-pointer">
-            <Link to = '/about'>About</Link>
+          <li onClick={() => setMenu("about")} className="hover:text-amber-500 cursor-pointer border-none">
+            <Link to = '/about' 
+              className={menu === "about" ? " underline underline-offset-8" : ""}>About</Link>
           </li>
-          <li className="hover:text-amber-500 cursor-pointer">
-            <Link to = '/shop'>Shop</Link>
+          <li onClick={() => setMenu("shop")} className="hover:text-amber-500 cursor-pointer border-none">
+            <Link to = '/shop' className={menu === "shop" ? " underline underline-offset-8" : ""}>Shop</Link>
           </li>
-          <li className="hover:text-amber-500 cursor-pointer relative "onClick={visible}>
-            <Link to = '/pages'>Pages</Link>
+          <li
+            onClick={() => {
+              setMenu("pages")
+              setIsOpen(!isOpen); // toggle the dropdown
+            }}
+            className="hover:text-amber-500 cursor-pointer relative border-none"
+          >
+            <Link to='/pages' className={menu === "pages" ? " underline underline-offset-8" : ""}>Pages</Link>
             {
               isOpen && (
                 <div className='absolute text-center bg-amber-50 p-5 w-56  -left-20'>
@@ -70,8 +82,14 @@ function Navbar() {
             }
 
           </li>
-          <li className="hover:text-amber-500 cursor-pointer relative" onClick={handClicks}>
-            <Link to = '/blog'>Blog</Link>
+          <li
+            onClick={() => {
+              setMenu("blog")
+              setItem(!item); // toggle the dropdown
+            }}
+            className="hover:text-amber-500 cursor-pointer relative border-none"
+            >
+            <Link to = '/blog' className= {menu === "blog" ? " underline underline-offset-8" : ""}>Blog</Link>
             {
               item &&(
                 <div className='absolute bg-amber-50  p-5 w-36  -left-10'>
@@ -85,15 +103,15 @@ function Navbar() {
               )
             }
           </li>
-          <li className="hover:text-amber-500 cursor-pointer">
-            <Link to = '/contact'>Contact</Link>
+          <li onClick={() => setMenu("contact")} className="hover:text-amber-500 cursor-pointer border-none">
+            <Link to = '/contact' className={menu === "contact" ? "underline underline-offset-8" : ""}>Contact</Link>
           </li>
         </ul>
 
         {/* Desktop Right Buttons */}
         <div className="hidden md:flex items-center gap-5">
           <button className="bg-amber-400 px-4 py-2 rounded-lg text-white font-semibold hover:bg-amber-500">
-            Get a Quote
+            <Link to='/signUp'>Get a Quote/Login</Link>
           </button>
           <PiShoppingBagBold className="text-2xl text-orange-400 cursor-pointer" />
         </div>

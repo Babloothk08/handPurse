@@ -11,16 +11,15 @@ import Shop from './pagess/shop/Shop';
 import Blog from './pagess/blog/Blog';
 import Contact from './pagess/contact/Contact';
 import Pages from './pagess/pages/Pages';
-// import Services from './pagess/pages/Services';
-// import OurTeam from './pagess/pages/ourteam/OurTeam';
-// import Pricing from './pagess/pages/pricing/Pricing';
-// import Faq from './pagess/pages/faq/Faq';
 import Pricing from './pagess/pages/pricing/Pricing';
 import Services from './pagess/pages/service/Services';
 import Faq from './pagess/pages/faq/Faq';
 import OurTeam from './pagess/pages/ourteam/OurTeam';
 import BlogChd1 from './pagess/blog/blogGrid/BlogChd1';
 import BlogList from './pagess/blog/blogList/BlogList';
+import DetailPage from './pagess/DetailPage';
+import SignUp from './pagess/login/SignUp';
+import Login from './pagess/login/Login';
 // import BlogChd1 from './pagess/blog/blogGrid/BlogChd1';
 
 // function App() {
@@ -50,8 +49,10 @@ import BlogList from './pagess/blog/blogList/BlogList';
             <Route path='/faq' element = {<Faq/>}/>
             <Route path='/blogchl' element = {<BlogChd1/>}/>
             <Route path='/bloglist' element = {<BlogList/>}/>
+            <Route path='/:category/detailPage/id' element = {<DetailPage/>}/>
+            <Route path='/signUp' element = {<SignUp/>}/>
+            <Route path='/login' element = {<Login/>}/>
          </Routes>
-        
       </BrowserRouter>
       <Footer/>
     </>
