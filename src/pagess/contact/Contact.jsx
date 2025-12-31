@@ -6,7 +6,7 @@ import Contact2 from './Contact2'
 
 function Contact() {
   return (
-    <div>
+    <div className='mt-15'>
       <Contact1/>
       <Contact2/>
       <ContactMap/>

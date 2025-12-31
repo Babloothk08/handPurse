@@ -1,7 +1,7 @@
 import './App.css'
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
 import Footer from './component/footer/Footer';
 import Navbar from './component/navbar/Navbar';
 import About from './pagess/about/About';
@@ -20,15 +20,13 @@ import BlogList from './pagess/blog/blogList/BlogList';
 import DetailPage from './pagess/DetailPage';
 import SignUp from './pagess/login/SignUp';
 import Login from './pagess/login/Login';
-// import BlogChd1 from './pagess/blog/blogGrid/BlogChd1';
 
-// function App() {
 
   const App = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration
-      once: true,     // whether animation should happen only once
+      duration: 1000, 
+      once: true,     
     });
   }, []);
 

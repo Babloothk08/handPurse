@@ -4,7 +4,7 @@ import Pages1 from './Pages1'
 
 function Pages() {
   return (
-    <div>
+    <div className='mt-15'>
       <Pages1/>
       <DesignBag/>
     </div>
